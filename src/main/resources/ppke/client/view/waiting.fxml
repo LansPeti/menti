@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox alignment="CENTER" spacing="25.0" prefHeight="350.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ppke.client.controller.WaitingController">
+    <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0" /></padding>
+    <ProgressIndicator fx:id="progressIndicator" prefHeight="80.0" prefWidth="80.0" />
+    <Label fx:id="messageLabel" text="Várakozás..." textAlignment="CENTER" wrapText="true"><font><Font size="18.0" /></font></Label>
+    <Button fx:id="cancelButton" onAction="#handleCancelButtonAction" text="Mégsem / Kilépés" cancelButton="true" />
+</VBox>
