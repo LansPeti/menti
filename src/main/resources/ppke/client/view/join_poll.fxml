@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="CENTER" spacing="20.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ppke.client.controller.JoinPollController"> <padding><Insets bottom="40.0" left="50.0" right="50.0" top="40.0" /></padding>
+    <Label text="Csatlakozás Szavazáshoz"><font><Font name="System Bold" size="24.0" /></font></Label>
+    <Label text="Add meg a 8 karakteres csatlakozási kódot:" />
+    <TextField fx:id="joinCodeField" promptText="KÓD" maxWidth="200.0" alignment="CENTER"><font><Font size="20.0" /></font></TextField>
+    <Button fx:id="joinButton" onAction="#handleJoinButtonAction" text="Csatlakozás" defaultButton="true" />
+    <Separator maxWidth="300.0" />
+    <Button fx:id="loginButton" onAction="#handleLoginButtonAction" text="Bejelentkezés / Saját Szavazások" />
+</VBox>

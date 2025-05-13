@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="CENTER" spacing="20.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="ppke.client.controller.RegisterController">
+    <padding><Insets bottom="30.0" left="50.0" right="50.0" top="30.0" /></padding>
+    <Label text="Regisztráció"><font><Font name="System Bold" size="24.0" /></font></Label>
+    <GridPane hgap="10.0" vgap="10.0" alignment="CENTER">
+        <Label text="Felhasználónév:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="usernameField" promptText="Válassz egy felhasználónevet" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        <Label text="Jelszó:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <PasswordField fx:id="passwordField1" promptText="Add meg a jelszót" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+        <Label text="Jelszó újra:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <PasswordField fx:id="passwordField2" promptText="Add meg a jelszót újra" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+        <columnConstraints><ColumnConstraints halignment="RIGHT" minWidth="100.0" /><ColumnConstraints hgrow="SOMETIMES"/></columnConstraints>
+    </GridPane>
+    <HBox alignment="CENTER" spacing="20.0">
+        <Button fx:id="registerButton" onAction="#handleRegisterButtonAction" text="Regisztráció" defaultButton="true" />
+        <Button fx:id="cancelButton" onAction="#handleCancelButtonAction" text="Mégsem" cancelButton="true" />
+    </HBox>
+</VBox>

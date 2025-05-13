@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox spacing="15.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ppke.client.controller.PollDetailsController">
+    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+    <HBox alignment="CENTER_LEFT" spacing="10.0">
+        <Label fx:id="pollNameLabel" text="Szavazás Neve" style="-fx-font-size: 18px; -fx-font-weight: bold;" HBox.hgrow="ALWAYS"/>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button fx:id="backButton" onAction="#handleBackButtonAction" text="Vissza a Profilhoz" managed="false" visible="false"/>
+    </HBox>
+    <Separator />
+    <GridPane hgap="10.0" vgap="5.0" fx:id="detailsPane">
+        <Label text="Kérdés:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-font-weight: bold;" />
+        <Label fx:id="pollQuestionLabel" text="..." wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label text="Típus:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-weight: bold;" />
+        <Label fx:id="pollTypeLabel" text="..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label text="Kód:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-font-weight: bold;" />
+        <Label fx:id="pollJoinCodeLabel" text="..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label text="Állapot:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-font-weight: bold;" />
+        <Label fx:id="pollStateLabel" text="..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <columnConstraints><ColumnConstraints minWidth="80.0" prefWidth="80.0" halignment="RIGHT" /><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+    </GridPane>
+    <Separator fx:id="separatorAfterDetails"/>
+    <VBox fx:id="editPane" spacing="10.0" managed="false" visible="false">
+        <Label text="Szavazás Szerkesztése (Csak Zárt Állapotban)" style="-fx-font-weight: bold; -fx-text-fill: darkblue;"/>
+        <GridPane hgap="10.0" vgap="5.0">
+            <Label text="Név:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="editNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label text="Kérdés:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="editQuestionField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <columnConstraints><ColumnConstraints minWidth="80.0" prefWidth="80.0" halignment="RIGHT"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+        </GridPane>
+        <HBox spacing="10.0" alignment="CENTER_RIGHT">
+            <Button fx:id="saveEditButton" onAction="#handleSaveEditButtonAction" text="Mentés" defaultButton="true"/>
+            <Button fx:id="cancelEditButton" onAction="#handleCancelEditButtonAction" text="Mégsem" cancelButton="true"/>
+        </HBox>
+        <Separator/>
+    </VBox>
+    <VBox fx:id="resultsPane" spacing="5.0" managed="false" visible="false">
+        <Label text="Eredmények (Összesítés)" style="-fx-font-weight: bold;"/>
+        <TextArea fx:id="resultsTextArea" editable="false" wrapText="true" prefHeight="150.0"/>
+        <Separator/>
+    </VBox>
+    <FlowPane hgap="10.0" vgap="10.0" alignment="CENTER_LEFT" prefWrapLength="600.0">
+        <Button fx:id="openButton" text="Megnyitás Csatlakozásra" onAction="#handleOpenButtonAction" managed="false" visible="false"/>
+        <Button fx:id="startButton" text="Szavazás Indítása" onAction="#handleStartButtonAction" managed="false" visible="false"/>
+        <Button fx:id="finishButton" text="Szavazás Befejezése" onAction="#handleFinishButtonAction" managed="false" visible="false"/>
+        <Button fx:id="closeButton" text="Lezárás" onAction="#handleCloseButtonAction" managed="false" visible="false"/>
+        <Button fx:id="editButton" text="Szerkesztés" onAction="#handleEditButtonAction" managed="false" visible="false"/>
+        <Button fx:id="resetResultsButton" text="Eredmények Nullázása" onAction="#handleResetResultsButtonAction" managed="false" visible="false"/>
+        <Button fx:id="showResultsButton" text="Eredmények Mutatása" onAction="#handleShowResultsButtonAction" managed="false" visible="false"/>
+    </FlowPane>
+</VBox>
